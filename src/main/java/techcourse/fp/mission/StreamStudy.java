@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class StreamStudy {
@@ -53,6 +54,7 @@ public class StreamStudy {
                 .distinct()
                 .limit(100)
                 .sorted((word1, word2) -> word1.length() - word2.length())
+                .map(String::toLowerCase)
                 .collect(Collectors.toList());
 
         System.out.println(words);
