@@ -12,6 +12,18 @@ public class Calculator {
         return total;
     }
 
+    public static int sumAll(List<Integer> numbers, IntegerPredicate integerPredicate) {
+        int total = 0;
+
+        for (int number : numbers) {
+            if (integerPredicate.test(number)) {
+                total += number;
+            }
+        }
+
+        return total;
+    }
+
     public static int sumAllEven(List<Integer> numbers) {
         int total = 0;
         for (int number : numbers) {
@@ -23,10 +35,11 @@ public class Calculator {
     }
 
     public static int sumAllOverThree(List<Integer> numbers) {
-        int total = 0;
-
-        //TODO: List에 담긴 값 중 3보다 큰 수만을 더해야 한다.
-
-        return total;
+        return sumAll(numbers, new IntegerPredicate() {
+            @Override
+            public boolean test(Integer number) {
+                return number > 3;
+            }
+        });
     }
 }
