@@ -33,7 +33,7 @@ class StreamStudyTest {
     public void sumOverThreeAndDouble() {
         numbers = Arrays.asList(3, 1, 6, 2, 4, 8);
         long sum = StreamStudy.sumOverThreeAndDouble(numbers);
-        assertThat(sum).isEqualTo(36);
+        assertThat(sum).isEqualTo(36); // 이 왜 36..?
     }
 
     @Test
